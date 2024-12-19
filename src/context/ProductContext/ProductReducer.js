@@ -5,6 +5,13 @@ const products = (state, action) => {
           ...state,
           products: action.payload,//res.data.results
         };
+
+        case "ADD_CART":
+          return {
+            ...state,
+            cart: [action.payload, ...state.cart],
+          };
+    
       default:
         return state;
     }
