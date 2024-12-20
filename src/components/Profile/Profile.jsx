@@ -23,6 +23,8 @@ const Profile = () => {
             }}
         >
             <p>{user.email}</p>
+            //pintar OrderS
+{/* {user.Orders} */}
         </Card>
     </div>;
 };

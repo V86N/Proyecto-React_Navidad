@@ -3,7 +3,7 @@ import { ProductContext } from '../../context/ProductContext/ProductState'
 import "./Products.scss"
 
 const Products = () => {
-  const { products, getProducts,addCart } = useContext(ProductContext)
+  const { products, getProducts, addCart } = useContext(ProductContext)
  
   useEffect(() => {
     getProducts();

@@ -7,6 +7,7 @@ import Header from './components/Header/Header'
 import { UserProvider } from './context/UserContext/UserState'
 import Login from './components/Login/Login'
 import Profile from './components/Profile/Profile'
+import Cart from './components/Cart/Cart'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
 
           </BrowserRouter>

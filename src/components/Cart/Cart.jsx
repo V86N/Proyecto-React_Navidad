@@ -1,27 +1,33 @@
-import { useContext } from "react";
-import { ProductContext } from "../../context/ProductContext/ProductState";
-
-
+import React, { useContext } from 'react'
+import { ProductContext } from '../../context/ProductContext/ProductState'
+import { Button, Empty } from 'antd'
+import { DeleteOutlined  } from "@ant-design/icons";
+import OrderService from '../../components/services/OrderService';
+ 
 const Cart = () => {
-  const { cart } = useContext(ProductContext);
+    const {cart, clearCart} = useContext(ProductContext)
 
-  if (cart.length <= 0) {
-    return <span>Your cart its empty</span>;
-  }
+    if(cart.length == 0){
+        return <Empty description="The cart is empty" />
+    }
 
-  const cartItem = cart.map((cartItem, i) => {
-    return (
-      <div className="cart" key={i}>
-        <span>{cartItem.name}</span>
-        <span>{cartItem.price.toFixed(2)} €</span>
-      </div>
-    );
-  });
-  return (
-    <div>
-      {cartItem}
+   
+ return (
+    <div>{cart.map(product =>{
+        return <div key={product.id}>
+            <p>Product name: {product.name} Price: {product.price} €</p>
+        </div>
+    })}
+    <Button onClick={clearCart}>Clear cart <DeleteOutlined /></Button>
+     <Button onClick={async()=>{
+       await OrderService.createOrder(cart)
+        clearCart()
+        }}>Create order</Button> 
+     
     </div>
-  );
-};
+  )
+}
 
-export default Cart;
+export default Cart
+
+
