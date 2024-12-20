@@ -1,6 +1,6 @@
 import {  useState, useContext } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-//importaciones
+
 
 const Register = () => {
       const initialValue = {
@@ -12,7 +12,7 @@ const Register = () => {
       };
       
       const [data, setData] = useState(initialValue);
-      const {createUser} = useContext(UserContext)//traerme la función del contexto
+      const {createUser} = useContext(UserContext)
     
      const handleOnChange = (e) => {
        setData({
@@ -23,7 +23,7 @@ const Register = () => {
       const handleSubmit = (e) => {
         e.preventDefault();
         
-        createUser(data)//llamar a la función createUser y pasarle como argumento data(info del formulario)
+        createUser(data)
         setData(initialValue);
       };
 
@@ -34,14 +34,14 @@ const Register = () => {
             <input
               type="text"
               name="firtName"
-              value={data.firtname}
+              value={data.firtName}
               placeholder="Introduce tu nombre"
               onChange={handleOnChange}
             />
             <input
               type="text"
               name="lastName"
-              value={data.lastname}
+              value={data.lastName}
               placeholder="Introduce tu apellido"
               onChange={handleOnChange}
             />

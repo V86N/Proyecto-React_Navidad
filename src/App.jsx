@@ -8,6 +8,8 @@ import { UserProvider } from './context/UserContext/UserState'
 import Login from './components/Login/Login'
 import Profile from './components/Profile/Profile'
 import Cart from './components/Cart/Cart'
+import Home from './components/Home/Home'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -21,13 +23,14 @@ function App() {
           <BrowserRouter>
             <Header />
             <Routes>
-              <Route path="/" element={<Products />} />
+              <Route path="/" element={<Home />} /> 
+              <Route path="/products" element={<Products />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
-
+            <Footer/>
           </BrowserRouter>
         </UserProvider>
       </ProductProvider>
