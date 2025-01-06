@@ -19,8 +19,7 @@ export const ProductProvider = ({children}) => {
         const res = await axios.get("http://localhost:3000/products/getAll");
        
         
-        // setNews(res.data.results)
-        //modificamos el estado de Characters
+        
         dispatch({
           type: "GET_PRODUCTS",
           payload: res.data

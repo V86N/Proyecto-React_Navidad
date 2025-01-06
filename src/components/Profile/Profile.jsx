@@ -1,32 +1,24 @@
 import React, { useContext, useEffect } from "react";
 import { UserContext } from "../../context/UserContext/UserState";
-import { Card } from 'antd';
 
 const Profile = () => {
-
     const { getUserInfo, user } = useContext(UserContext);
 
     useEffect(() => {
-        getUserInfo()
-    }, [])
+        getUserInfo();
+    }, []);
 
-    if (!user) {
-        return <p>cagando</p>
-    }
-    return <div>
-        
-        <Card
-            title={user.firtName}
-            bordered={false}
-            style={{
-                width: 300,
-            }}
-        >
-            <p>{user.email}</p>
-            //pintar OrderS
-{/* {user.Orders} */}
-        </Card>
-    </div>;
+     return (
+        <div className="container mt-4">
+            <div className="card" style={{ width: '18rem' }}>
+                <div className="card-body">
+                    <h5 className="card-title">{user.firtName}</h5>
+                    <h6 className="card-subtitle mb-2 text-muted">{user.email}</h6>
+                    
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default Profile;

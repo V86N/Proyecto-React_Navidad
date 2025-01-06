@@ -40,7 +40,7 @@ const login = async (user) => {
             Authorization: token,
           },
         });
-        //modifica el estado (en este caso modifica user y lo rellena con la información que llega de la petición)
+        
         dispatch({
           type: "GET_USER_INFO",
           payload: res.data.user
