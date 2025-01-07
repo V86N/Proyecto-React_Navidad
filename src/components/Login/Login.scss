@@ -1,0 +1,65 @@
+@import "../../colors.scss";
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: $fourthColor;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: $fourthColor;
+}
+
+.login-card {
+  background-color: $fourthColor;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+
+  .login-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $primaryColor;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+      color: $primaryColor;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid $primaryColor;
+      border-radius: 4px;
+    }
+  }
+
+  .form-button {
+    display: flex;
+    justify-content: center;
+
+    .btn-submit {
+      padding: 10px 20px;
+      background-color: $primaryColor;
+      color: $fourthColor;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $secondaryColor;
+      }
+    }
+  }
+}
